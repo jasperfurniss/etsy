@@ -25,19 +25,27 @@ var filtereditems = etsyItems.filter(function(item){
 });
 
 
-console.assert("Items that cost between $14.00 USD and $18.00 USD:" + "filtereditems");
+console.assert("Items that cost between $14.00 USD and $18.00 USD:", filtereditems);
 
 
 
 // QUESTION THREE
 // Show me how to find the item with a "GBP" currency code and print its name and price. Please console.log the one you find.
 // The output should be "1970s Schlitz Malt Liquor Glass Beer Pitcher costs £18"
+// var answer = "";
+//
+var filteredItems = etsyItems.filter(function(item){
+  return (item.currency_code == "GBP");
 
-var particular = etsyItems.filter(function(item){
-  return (item.currency_code = "GBP");
 });
 
-console.log(particular);
+var particular = filteredItems[0];
+console.log(particular.title, "costs £", particular.price);
+
+//
+//
+//
+//
 
 // QUESTION FOUR
 // Show me how to find which items are made of wood. Please console.log the ones you find.
