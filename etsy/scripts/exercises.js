@@ -40,7 +40,7 @@ var filteredItems = etsyItems.filter(function(item){
 });
 
 var particular = filteredItems[0];
-console.log(particular.title, "costs £", particular.price);
+console.assert(particular.title, "costs £", particular.price);
 
 //
 //
@@ -50,12 +50,20 @@ console.log(particular.title, "costs £", particular.price);
 // QUESTION FOUR
 // Show me how to find which items are made of wood. Please console.log the ones you find.
 // The output should be:
-//
+
 // SALE Mid Century Siesta Ware White Mug with Anchor - Set of 3 is made of wood.
 // Bottle cap catcher personalized. Man cave gift for him- Wooden Beer pub sign - Groomsmen wedding Gift is made of wood.
 // Medium Size, Welcome To Our Firepit-Where Friends And Marshmallows Get Toasted At The Same Time-Painted Wood Sign-Custom Colors is made of wood.
 // Magnetic Wall Mount Bottle Opener Barware Set - Stainless Steel or Black - Personalized if you like! is made of wood.
 // Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
+
+var element = "wood";
+var filteredItems = etsyItems.filter(function(item){
+  if (item.materials.indexOf(element) != -1) {
+    console.assert(item.title, "is made of wood");
+}
+});
+
 
 
 // QUESTION FIVE
@@ -72,8 +80,16 @@ console.log(particular.title, "costs £", particular.price);
 // home bar
 // beer
 // bar
-//
-//
+var filteredItems = etsyItems.filter(function(specialitem){
+  if (specialitem.materials.length > 7) {
+    console.assert(specialitem.title, specialitem.materials);
+  }
+});
+
+
+
+
+
 // The Three Broomsticks Customizable Beer Stein Mug, Harry Potter  Inspired, hogsmeade village, harry potter gift, three broomsticks mug  has 13 materials:
 // glass
 // sandblast cabinet
@@ -93,3 +109,19 @@ console.log(particular.title, "costs £", particular.price);
 // QUESTION 6
 // Show me how to calculate how many items were made by their sellers
 // The output should be "18 were made by their sellers"
+
+//display only items where .who_made = i_did
+//calculate sum
+//console.log sum
+
+
+
+// materials.forEach(function(num) {
+//   return ;
+// });
+
+
+var handmadeItems = etsyItems.filter(function(specialitem){
+  return (specialitem.who_made == "i_did");
+});
+console.assert(handmadeItems.length+ " were made by their sellers");
